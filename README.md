@@ -5,3 +5,4 @@ Contributors:
 Yaman Malik (300041804, ymali009@uottawa.ca)
 Shumael Syed (300024162, ssyed076@uottawa.ca)
 Arjuunan Arulnamby (300043459, aarul064@uottawa.ca)
+Eric Dam (300012511, edam3268@gmail.com)
