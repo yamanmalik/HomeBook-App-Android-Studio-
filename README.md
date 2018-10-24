@@ -1,5 +1,6 @@
 # SEG2105-Project
-Repository containing the required files for the SEG2105 final project.
+Repository containing the required files for the SEG2105 final group project.
+
 
 Contributors:
 Yaman Malik (300041804, ymali009@uottawa.ca)
