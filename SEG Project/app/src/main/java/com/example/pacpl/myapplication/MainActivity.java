@@ -16,17 +16,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button userbutton = (Button) findViewById(R.id.userbutton);
-        Button serviceproviderbutton = (Button) findViewById(R.id.serviceproviderbutton);
+        Button user = (Button) findViewById(R.id.userbutton);
+        Button serviceprovider = (Button) findViewById(R.id.serviceproviderbutton);
 
-        serviceproviderbutton.setOnClickListener(new View.OnClickListener() {
+        serviceprovider.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startintent = new Intent(getApplicationContext(), profileActivity.class);
-                startActivity(startintent);
+                Intent startintent3;
+                startintent3 = new Intent(getApplicationContext(), profileActivity.class);
+                startActivity(startintent3);
             }
         });
-        userbutton.setOnClickListener(new View.OnClickListener() {
+        user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startintent2 = new Intent(getApplicationContext(), searchActivity.class);

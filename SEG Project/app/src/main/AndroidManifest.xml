@@ -20,6 +20,7 @@
         <activity android:name=".profileActivity" />
         <activity android:name=".searchActivity" />
         <activity android:name=".occupationActivity" />
+
         <activity android:name=".MainActivity"></activity>
     </application>
 

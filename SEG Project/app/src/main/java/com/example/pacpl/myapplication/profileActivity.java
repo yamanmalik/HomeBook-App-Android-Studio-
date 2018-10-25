@@ -8,9 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 public class profileActivity extends AppCompatActivity {
 
     String decision, firstname, lastname, number, username, password;
@@ -19,22 +16,27 @@ public class profileActivity extends AppCompatActivity {
     EditText numberinput;
     EditText usernameinput;
     EditText passwordinput;
-    //Firebase myFirebase;
-
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference();
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
+
+        Button selector = (Button) findViewById(R.id.selectorbutton);
+        selector.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(new Intent(getApplicationContext(), occupationActivity.class)); }
+        });
+
         firstnameinput = (EditText) findViewById(R.id.firstnameinput);
         lastnameinput = (EditText) findViewById(R.id.lastnameinput);
         numberinput = (EditText) findViewById(R.id.numberinput);
         usernameinput =(EditText) findViewById(R.id.usernameinput);
         passwordinput = (EditText) findViewById(R.id.passwordinput);
+
         Button continuebutton = (Button) findViewById(R.id.continuebutton);
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,13 +46,9 @@ public class profileActivity extends AppCompatActivity {
                 number = numberinput.getText().toString();
                 username = usernameinput.getText().toString();
                 password = passwordinput.getText().toString();
-                Intent startintent2 = new Intent(getApplicationContext(), loginActivity.class);
-                startActivity(startintent2);//when continue is clicked, it assigns the variables
-                // and takes user to the login activity
-
-
-
-
+                Intent away = new Intent(getApplicationContext(), loginActivity.class);
+                startActivity(away);//when continue is clicked, it assigns the variables
+                // and takes user to the login activit
 
             }
         });
@@ -60,16 +58,7 @@ public class profileActivity extends AppCompatActivity {
             occupationtext.setText(decision);//code to recieve information from back button of occupation activity after
             //occupation is selected
 
-
         }//code for occupation selctor to go to occupation activity
-        Button skillselectorbutton = (Button)findViewById(R.id.skillselectorbutton);
-        skillselectorbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent startintent = new Intent(getApplicationContext(), occupationActivity.class);
-                startActivity(startintent);
-            }
-        });
 
-    }
+        }
 }

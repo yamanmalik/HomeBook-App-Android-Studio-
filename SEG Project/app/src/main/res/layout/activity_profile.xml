@@ -129,7 +129,7 @@
         tools:layout_editor_absoluteY="196dp" />
 
     <Button
-        android:id="@+id/skillselectorbutton"
+        android:id="@+id/selectorbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -152,10 +152,11 @@
         android:layout_height="54dp"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         android:text="Occupation Selector"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="363dp" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordtext" />
 
     <TextView
         android:id="@+id/occupationtext"
@@ -167,7 +168,7 @@
         android:layout_marginStart="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
-        app:layout_constraintStart_toEndOf="@+id/skillselectorbutton"
+        app:layout_constraintStart_toEndOf="@+id/selectorbutton"
         tools:layout_editor_absoluteY="369dp" />
 
     <ImageView
@@ -287,7 +288,7 @@
         android:ems="10"
         android:hint="Enter Here"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/skillselectorbutton"
+        app:layout_constraintBottom_toTopOf="@+id/selectorbutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"

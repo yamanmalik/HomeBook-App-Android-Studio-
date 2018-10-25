@@ -10,10 +10,11 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import android.content.Intent;
-public class occupationActivity extends AppCompatActivity {
+public class occupationActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_occupation);
 
@@ -34,11 +35,14 @@ public class occupationActivity extends AppCompatActivity {
         list.add("Handyman Services");
 
 
-        EditText input = (EditText) findViewById(R.id.occupationinput);
-        int select=0;
-        select = Integer.parseInt(input.getText().toString());
+        try{EditText input = (EditText) findViewById(R.id.occupationinput);
+        String a= input.getText().toString();
+
+        final int select = Integer.parseInt(a);
         final Object o = list.get(select);
         final String selection = (String) o;
+
+
         Button occupationbackbutton = (Button)findViewById(R.id.occupationbackbutton);
         occupationbackbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,11 +50,13 @@ public class occupationActivity extends AppCompatActivity {
                 Intent startIntent = new Intent(getApplicationContext(), profileActivity.class);
                 startIntent.putExtra("com.example.pacpl.myapplication.occupation",selection);
                 startActivity(startIntent);
-
             }
         });
-
-
+        }
+        catch(NumberFormatException e)
+        {
+            System.out.println("Enter integer");
+        }
 
 
     }
