@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "512323087186",
+    "firebase_url": "https://sej-project.firebaseio.com",
+    "project_id": "sej-project",
+    "storage_bucket": "sej-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512323087186:android:8b82896c1e35fb57",
+        "android_client_info": {
+          "package_name": "com.example.pacpl.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512323087186-j7sjl99a1jsk7fp3186mpkqpvge6v22i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYMtU4OpIChdSSnGqQ0m2lrGfwrS7GHIg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
