@@ -43,7 +43,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Title" />
 
     <Button
-        android:id="@+id/profilebutton"
+        android:id="@+id/userbutton"
         android:layout_width="141dp"
         android:layout_height="58dp"
         android:layout_marginBottom="8dp"
@@ -61,7 +61,7 @@
         app:layout_constraintVertical_bias="0.55" />
 
     <Button
-        android:id="@+id/searchbutton"
+        android:id="@+id/serviceproviderbutton"
         android:layout_width="167dp"
         android:layout_height="60dp"
         android:layout_marginBottom="8dp"
@@ -75,11 +75,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profilebutton"
+        app:layout_constraintTop_toBottomOf="@+id/userbutton"
         app:layout_constraintVertical_bias="0.08" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/adminbutton"
         android:layout_width="123dp"
         android:layout_height="59dp"
         android:layout_marginBottom="8dp"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.465"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searchbutton"
+        app:layout_constraintTop_toBottomOf="@+id/serviceproviderbutton"
         app:layout_constraintVertical_bias="0.169" />
 
 </android.support.constraint.ConstraintLayout>
