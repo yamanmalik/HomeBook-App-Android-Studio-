@@ -8,7 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class profileActivity extends AppCompatActivity {
 
@@ -18,6 +19,11 @@ public class profileActivity extends AppCompatActivity {
     EditText numberinput;
     EditText usernameinput;
     EditText passwordinput;
+    //Firebase myFirebase;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +47,9 @@ public class profileActivity extends AppCompatActivity {
                 Intent startintent2 = new Intent(getApplicationContext(), loginActivity.class);
                 startActivity(startintent2);//when continue is clicked, it assigns the variables
                 // and takes user to the login activity
-                
+
+
+
 
 
             }
@@ -54,8 +62,8 @@ public class profileActivity extends AppCompatActivity {
 
 
         }//code for occupation selctor to go to occupation activity
-        Button skillselector = (Button)findViewById(R.id.skillselector);
-        skillselector.setOnClickListener(new View.OnClickListener() {
+        Button skillselectorbutton = (Button)findViewById(R.id.skillselectorbutton);
+        skillselectorbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startintent = new Intent(getApplicationContext(), occupationActivity.class);
