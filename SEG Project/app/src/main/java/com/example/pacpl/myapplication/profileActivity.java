@@ -19,13 +19,10 @@ public class profileActivity extends AppCompatActivity {
     EditText usernameinput;
     EditText passwordinput;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
-
 
         firstnameinput = (EditText) findViewById(R.id.firstnameinput);
         lastnameinput = (EditText) findViewById(R.id.lastnameinput);
@@ -44,6 +41,7 @@ public class profileActivity extends AppCompatActivity {
                 Intent startintent2 = new Intent(getApplicationContext(), loginActivity.class);
                 startActivity(startintent2);//when continue is clicked, it assigns the variables
                 // and takes user to the login activity
+                
 
 
             }
