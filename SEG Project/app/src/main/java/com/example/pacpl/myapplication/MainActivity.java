@@ -16,25 +16,37 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button user = (Button) findViewById(R.id.userbutton);
-        Button serviceprovider = (Button) findViewById(R.id.serviceproviderbutton);
+        Button profilebutton = (Button) findViewById(R.id.profilebutton); //user
 
-        serviceprovider.setOnClickListener(new View.OnClickListener() {
+        Button searchbutton = (Button) findViewById(R.id.searchbutton); //service provider
+
+        Button occupationbutton = (Button) findViewById(R.id.AdminButton);
+
+
+        occupationbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startintent3;
-                startintent3 = new Intent(getApplicationContext(), profileActivity.class);
-                startActivity(startintent3);
+                Intent startintent1 = new Intent(getApplicationContext(), occupationActivity.class);
+                startActivity(startintent1);
             }
         });
-        user.setOnClickListener(new View.OnClickListener() {
+
+        profilebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent startintent = new Intent(getApplicationContext(), profileActivity.class);
+                startActivity(startintent);
+            }
+        });
+
+        searchbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startintent2 = new Intent(getApplicationContext(), searchActivity.class);
                 startActivity(startintent2);
             }
         });
-
+        ArrayList list = new ArrayList(10);
 
 
 

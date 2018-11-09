@@ -9,8 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".loginActivity">
-           //swithced with mainactivity
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,8 +19,7 @@
         <activity android:name=".profileActivity" />
         <activity android:name=".searchActivity" />
         <activity android:name=".occupationActivity" />
-
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".welcome"></activity>
     </application>
 
 </manifest>

@@ -6,16 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+
+import java.util.ArrayList;
 
 public class profileActivity extends AppCompatActivity {
 
-    String decision, firstname, lastname, number, username, password;
-    EditText firstnameinput;
-    EditText lastnameinput;
-    EditText numberinput;
-    EditText usernameinput;
-    EditText passwordinput;
+    String firstName, lastName, emailAddress, role;
+    int phoneNumber;
+
+    EditText roleInput;
+    EditText firstNameInput;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,42 +25,38 @@ public class profileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
 
-        Button selector = (Button) findViewById(R.id.selectorbutton);
-        selector.setOnClickListener(new View.OnClickListener() {
+
+        firstNameInput = (EditText) findViewById(R.id.firstname);
+        roleInput = (EditText) findViewById(R.id.confirm1);
+
+//        lastNameInput = (EditText) findViewById(R.id.lastname);
+//        emailInput = (EditText) findViewById(R.id.email);
+//        phoneNumberInput = (EditText) findViewById(R.id.phonenumber);
+
+        Button usercontinue1 = (Button) findViewById(R.id.usercontinue); //user
+        usercontinue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(getApplicationContext(), occupationActivity.class)); }
-        });
 
-        firstnameinput = (EditText) findViewById(R.id.firstnameinput);
-        lastnameinput = (EditText) findViewById(R.id.lastnameinput);
-        numberinput = (EditText) findViewById(R.id.numberinput);
-        usernameinput =(EditText) findViewById(R.id.usernameinput);
-        passwordinput = (EditText) findViewById(R.id.passwordinput);
+                Intent startintent = new Intent(getApplicationContext(), welcome.class);
+                startActivity(startintent);
+                firstName = firstNameInput.getText().toString();
+                role = roleInput.getText().toString();
 
-        Button continuebutton = (Button) findViewById(R.id.continuebutton);
-        continuebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                firstname = firstnameinput.getText().toString();
-                lastname = lastnameinput.getText().toString();
-                number = numberinput.getText().toString();
-                username = usernameinput.getText().toString();
-                password = passwordinput.getText().toString();
-                Intent away = new Intent(getApplicationContext(), loginActivity.class);
-                startActivity(away);//when continue is clicked, it assigns the variables
-                // and takes user to the login activit
+                Intent intent = new Intent(profileActivity.this, welcome.class);
 
+                intent.putExtra("jim", role);
+                intent.putExtra("jimmy", firstName);
+
+                startActivity(intent);
             }
         });
-        if (getIntent().hasExtra("com.example.pacpl.myapplication.occupation")){
-            decision = getIntent().getExtras().getString("com.example.pacpl.myapplication.occupation");
-            TextView occupationtext = (TextView) findViewById(R.id.occupationtext);
-            occupationtext.setText(decision);//code to recieve information from back button of occupation activity after
-            //occupation is selected
 
-        }//code for occupation selctor to go to occupation activity
+        ArrayList list = new ArrayList(10);
+        list.add(""
+        );
 
-        }
+
+    }
 }
