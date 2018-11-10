@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         DatabaseReference databaseProducts;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        databaseProducts = FirebaseDatabase.getInstance().getReference("products");
+        databaseProducts = FirebaseDatabase.getInstance().getReference("persons");
 
 
         super.onCreate(savedInstanceState);
@@ -70,10 +70,10 @@ public class MainActivity extends AppCompatActivity {
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     String person = postSnapshot.getValue(String.class);
-                    persons.add(product);
+                    persons.add(person);
 
                 }
-                ProductList productsAdapter = new ProductList(MainActivity.this, products);
+                PersonList productsAdapter = new ProductList(MainActivity.this, products);
                 listViewProducts.setAdapter(productsAdapter);
             }
             @Override
