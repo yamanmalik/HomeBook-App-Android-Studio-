@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DatabaseReference databaseProducts;
+        DatabaseReference databasePersons;
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        databaseProducts = FirebaseDatabase.getInstance().getReference("persons");
+        databasePersons = FirebaseDatabase.getInstance().getReference("persons");
 
 
         super.onCreate(savedInstanceState);
@@ -64,16 +64,16 @@ public class MainActivity extends AppCompatActivity {
     protected void Onstart(){
 
         super.onStart();
-        databaseProducts.addValueEventListener(new ValueEventListener() {
+        databasePersons.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    String person = postSnapshot.getValue(String.class);
+                    Person person = postSnapshot.getValue(Person.class);
                     persons.add(person);
 
                 }
-                PersonList productsAdapter = new ProductList(MainActivity.this, products);
+                PersonList productsAdapter = new ProductList(MainActivity.this, persons);
                 listViewProducts.setAdapter(productsAdapter);
             }
             @Override
