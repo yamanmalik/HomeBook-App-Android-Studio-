@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    //change
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         DatabaseReference databasePersons;
@@ -81,7 +81,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.w(Tag, "Failed t read value", databaseError.toException());
             }
         });
-
-
     }
 }}
