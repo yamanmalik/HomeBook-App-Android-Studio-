@@ -1,32 +1,18 @@
 package com.example.pacpl.myapplication;
 
-import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.content.Intent;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    //change
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        DatabaseReference databasePersons;
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        databasePersons = FirebaseDatabase.getInstance().getReference("persons");
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -62,22 +48,10 @@ public class MainActivity extends AppCompatActivity {
         });
         ArrayList list = new ArrayList(10);
 
-        databasePersons.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
 
-                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
-                    Person person = postSnapshot.getValue(Person.class);
-                   // persons.add(person);
 
-                }
-//                PersonList productsAdapter = new ProductList(MainActivity.this, persons);
-             //   listViewProducts.setAdapter(productsAdapter);
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-               /// Log.w(Tag, "Failed t read value", databaseError.toException());
 
-        }
 
-});}}
+
+    }
+}
