@@ -61,25 +61,23 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         ArrayList list = new ArrayList(10);
-    protected void Onstart(){
 
-        super.onStart();
         databasePersons.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
                     Person person = postSnapshot.getValue(Person.class);
-                    persons.add(person);
+                   // persons.add(person);
 
                 }
-                PersonList productsAdapter = new ProductList(MainActivity.this, persons);
-                listViewProducts.setAdapter(productsAdapter);
+//                PersonList productsAdapter = new ProductList(MainActivity.this, persons);
+             //   listViewProducts.setAdapter(productsAdapter);
             }
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Log.w(Tag, "Failed t read value", databaseError.toException());
-            }
-        });
-    }
-}}
+               /// Log.w(Tag, "Failed t read value", databaseError.toException());
+
+        }
+
+});}}
