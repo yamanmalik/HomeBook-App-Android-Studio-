@@ -12,23 +12,31 @@ import java.util.ArrayList;
 
 public class occupationActivity extends AppCompatActivity {
 
-    String firstName, lastName, emailAddress, role;
+    String username, password, email, phonenumber;//firstname,lastname,email,number
     int phoneNumber;
 
-    EditText roleInput;
-    EditText firstNameInput;
 
-
+    EditText usernameInput;
+    EditText passwordInput;
+    EditText emailInput;
+    EditText phonenumberInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_occupation);
 
+        usernameInput = (EditText) findViewById(R.id.firstname);
+        passwordInput = (EditText) findViewById(R.id.lastname);
+        phonenumberInput = (EditText) findViewById(R.id.phonenumber);
+        emailInput = (EditText) findViewById(R.id.email);
 
+        username =usernameInput.getText().toString();
+        password = passwordInput.getText().toString();
+        email =emailInput.getText().toString();
+        phonenumber = phonenumberInput.getText().toString();
 
-        firstNameInput = (EditText) findViewById(R.id.firstname);
-        roleInput = (EditText) findViewById(R.id.confirm2);
+        //roleInput = (EditText) findViewById(R.id.confirm2);
 
 //        lastNameInput = (EditText) findViewById(R.id.lastname);
 //        emailInput = (EditText) findViewById(R.id.email);
@@ -42,21 +50,22 @@ public class occupationActivity extends AppCompatActivity {
 
                 Intent startintent = new Intent(getApplicationContext(), welcome.class);
                 startActivity(startintent);
-                firstName = firstNameInput.getText().toString();
-                role = roleInput.getText().toString();
+                username = usernameInput.getText().toString();
+               // role = roleInput.getText().toString(); FOR TRANSFERRING INFO TO NEXT ACITIVITY
 
                 Intent intent = new Intent(occupationActivity.this, welcome.class);
+                Person person = new Admin(username, password);
+               // intent.putExtra("jim", role);
+                intent.putExtra("jimmy", username);
 
-                intent.putExtra("jim", role);
-                intent.putExtra("jimmy", firstName);
+
+
 
                 startActivity(intent);
             }
         });
 
-        ArrayList list = new ArrayList(10);
-        list.add(""
-        );
+
 
 
     }

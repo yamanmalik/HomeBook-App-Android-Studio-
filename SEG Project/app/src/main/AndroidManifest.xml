@@ -19,7 +19,7 @@
         <activity android:name=".profileActivity" />
         <activity android:name=".searchActivity" />
         <activity android:name=".occupationActivity" />
-        <activity android:name=".welcome"></activity>
+        <activity android:name=".welcome" />
     </application>
 
 </manifest>

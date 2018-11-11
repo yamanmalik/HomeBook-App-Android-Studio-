@@ -14,7 +14,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:id="@+id/firstnametext"
+            android:id="@+id/usernametext"
             android:layout_width="81dp"
             android:layout_height="44dp"
             android:layout_marginBottom="8dp"
@@ -23,7 +23,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="First Name"
+            android:text="Username"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,9 +39,9 @@
             android:layout_height="41dp"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginLeft="5dp"
             android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="8dp"
             android:text="Phone Number"
             android:textSize="18sp"
@@ -54,10 +54,10 @@
             app:layout_constraintVertical_bias="0.45" />
 
         <TextView
-            android:id="@+id/phonenumbertext2"
+            android:id="@+id/emailtext"
             android:layout_width="83dp"
             android:layout_height="41dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
@@ -83,7 +83,7 @@
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
-            android:text="Last Name"
+            android:text="Password"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -154,27 +154,7 @@
             app:layout_constraintVertical_bias="0.106" />
 
         <EditText
-            android:id="@+id/confirm2"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint='Type "Admin" To Confirm'
-            android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.78" />
-
-        <EditText
-            android:id="@+id/email3"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
@@ -194,7 +174,7 @@
             app:layout_constraintVertical_bias="0.582" />
 
         <EditText
-            android:id="@+id/email2"
+            android:id="@+id/phonenumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
