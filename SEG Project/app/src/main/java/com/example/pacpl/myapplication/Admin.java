@@ -1,7 +1,4 @@
 package com.example.pacpl.myapplication;
-
-import java.util.ArrayList;
-
 public class Admin extends Person {
     String nameofservice;
     double hourlyrate;
@@ -23,6 +20,5 @@ public class Admin extends Person {
     public void setHourlyrate(double hourlyrate){
         this.hourlyrate=hourlyrate;
     }
-
 
 }

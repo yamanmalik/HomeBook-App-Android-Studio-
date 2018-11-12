@@ -20,6 +20,9 @@
         <activity android:name=".searchActivity" />
         <activity android:name=".occupationActivity" />
         <activity android:name=".welcome" />
+        <activity android:name=".addserviceactivity" />
+        <activity android:name=".removeserviceactivity" />
+        <activity android:name=".editserviceactivity"></activity>
     </application>
 
 </manifest>
