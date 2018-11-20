@@ -26,18 +26,18 @@ public class searchActivity extends AppCompatActivity {
         roleInput = (EditText) findViewById(R.id.confirm1);
 
 
-        Button servicecontinue1 = (Button) findViewById(R.id.servicecontinue); //user
+        Button servicecontinue1 = (Button) findViewById(R.id.servicecontinue); //service Provider
         servicecontinue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-                Intent startintent = new Intent(getApplicationContext(), welcome.class);
+                Intent startintent = new Intent(getApplicationContext(), WelcomeSP.class);
                 startActivity(startintent);
                 firstName = firstNameInput.getText().toString();
                 role = roleInput.getText().toString();
 
-                Intent intent = new Intent(searchActivity.this, welcome.class);
+                Intent intent = new Intent(searchActivity.this, WelcomeSP.class);
 
                 intent.putExtra("jim", role);
                 intent.putExtra("jimmy", firstName);

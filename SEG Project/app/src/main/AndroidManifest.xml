@@ -22,7 +22,10 @@
         <activity android:name=".welcome" />
         <activity android:name=".addserviceactivity" />
         <activity android:name=".removeserviceactivity" />
-        <activity android:name=".editserviceactivity"></activity>
+        <activity android:name=".editserviceactivity" />
+        <activity
+            android:name=".WelcomeSP"
+            android:label="@string/title_activity_welcome_sp"></activity>
     </application>
 
 </manifest>
