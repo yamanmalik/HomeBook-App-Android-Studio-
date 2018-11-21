@@ -23,10 +23,158 @@ public class WelcomeSP extends Activity {
     boolean[] checkedItems1;
     ArrayList<Integer> selectedItems1 = new ArrayList<>();
 
+    Button listOfServices2;
+    TextView addedServices2;
+    String[] listOfItems2;
+    boolean[] checkedItems2;
+    ArrayList<Integer> selectedItems2 = new ArrayList<>();
+
+    Button listOfServices3;
+    TextView addedServices3;
+    String[] listOfItems3;
+    boolean[] checkedItems3;
+    ArrayList<Integer> selectedItems3 = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_serviceproviderwelcome);
+
+        listOfServices3 = (Button) findViewById(R.id.listofavail2);
+        addedServices3 = (TextView) findViewById(R.id.availdisplay2);
+        listOfItems3 = getResources().getStringArray(R.array.DaysOfWeek);
+        checkedItems3 = new boolean[listOfItems3.length];
+
+        listOfServices3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeSP.this);
+                builder.setTitle("Select Day of Availability");
+                builder.setMultiChoiceItems(listOfItems3, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                        if(isChecked){
+                            if(!selectedItems3.contains(position)){
+                                selectedItems3.add(position);
+                            }
+                        }
+                        else if(selectedItems3.contains(position)){
+                            selectedItems3.remove((Integer)position);
+                        }
+                    }
+                });
+                builder.setCancelable(false);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String item = "";
+                        for(int i = 0; i<selectedItems3.size();i++){
+                            item = item + listOfItems3[selectedItems3.get(i)];
+                            if(i != selectedItems3.size() -1){
+                                item = item + ", ";
+
+                            }
+                        }
+                        addedServices3.setText(item);
+                    }
+                });
+
+                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        for(int i = 0; i<checkedItems3.length;i++){
+                            checkedItems3[i] = false;
+                            selectedItems3.clear();
+                            addedServices3.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = builder.create();
+                mDialog.show();
+            }
+        });
+
+
+
+
+
+
+
+
+
+        listOfServices2 = (Button) findViewById(R.id.listofavail);
+        addedServices2 = (TextView) findViewById(R.id.availdisplay);
+        listOfItems2 = getResources().getStringArray(R.array.Time_Slots);
+        checkedItems2 = new boolean[listOfItems2.length];
+
+        listOfServices2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeSP.this);
+                builder.setTitle("Select Availability");
+                builder.setMultiChoiceItems(listOfItems2, checkedItems2, new DialogInterface.OnMultiChoiceClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+                        if(isChecked){
+                            if(!selectedItems2.contains(position)){
+                                selectedItems2.add(position);
+                            }
+                        }
+                        else if(selectedItems2.contains(position)){
+                            selectedItems2.remove((Integer)position);
+                        }
+                    }
+                });
+                builder.setCancelable(false);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        String item = "";
+                        for(int i = 0; i<selectedItems2.size();i++){
+                            item = item + listOfItems2[selectedItems2.get(i)];
+                            if(i != selectedItems2.size() -1){
+                                item = item + ", ";
+
+                            }
+                        }
+                        addedServices2.setText(item);
+                    }
+                });
+
+                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        for(int i = 0; i<checkedItems2.length;i++){
+                            checkedItems2[i] = false;
+                            selectedItems2.clear();
+                            addedServices2.setText("");
+                        }
+                    }
+                });
+
+                AlertDialog mDialog = builder.create();
+                mDialog.show();
+            }
+        });
+
+
+
+
 
         listOfServices1 = (Button) findViewById(R.id.listofservices2);
         addedServices1 = (TextView) findViewById(R.id.removedservicesdisplayed);
@@ -89,6 +237,7 @@ public class WelcomeSP extends Activity {
                 mDialog.show();
             }
         });
+
 
 
 
