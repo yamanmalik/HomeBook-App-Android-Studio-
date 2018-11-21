@@ -25,7 +25,8 @@
         <activity android:name=".editserviceactivity" />
         <activity
             android:name=".WelcomeSP"
-            android:label="@string/title_activity_welcome_sp"></activity>
+            android:label="@string/title_activity_welcome_sp" />
+        <activity android:name=".welcomeuser"></activity>
     </application>
 
 </manifest>
