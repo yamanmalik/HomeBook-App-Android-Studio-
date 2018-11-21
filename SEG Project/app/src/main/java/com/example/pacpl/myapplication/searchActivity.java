@@ -12,12 +12,15 @@ import android.text.TextUtils;
 
 public class searchActivity extends AppCompatActivity {
 
-    String firstName, lastName, emailAddress, role;
+    String firstName, role;
     EditText firstNameInput;
     EditText roleInput;
     EditText addressInput;
     EditText companyInput;
     EditText phoneInput;
+    EditText lastNameInput;
+    EditText emailInput;
+
 
 
 
@@ -32,6 +35,8 @@ public class searchActivity extends AppCompatActivity {
         addressInput = (EditText) findViewById(R.id.addressinput);//Changed by salty
         companyInput = (EditText) findViewById(R.id.companyinput);//Changed by salty
         phoneInput = (EditText) findViewById(R.id.phonenumber2);//Changed by salty
+        lastNameInput = (EditText) findViewById(R.id.lastname);//Changed by salty
+        emailInput = (EditText) findViewById(R.id.emailinput);//Changed by salty
 
 
         Button servicecontinue1 = (Button) findViewById(R.id.servicecontinue); //service Provider
@@ -39,6 +44,20 @@ public class searchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (TextUtils.isEmpty(firstNameInput.getText().toString())) {
+                    firstNameInput.setError("Enter a valid name");
+                    return;
+                }
+                if (TextUtils.isEmpty(lastNameInput.getText().toString())) {
+                    lastNameInput.setError("Enter a valid name");
+                    return;
+                }
+                if (TextUtils.isEmpty(phoneInput.getText().toString())
+                        ||!isNumeric(phoneInput.getText().toString())
+                        ||phoneInput.getText().toString().length()!=10) {
+                    phoneInput.setError("Enter a valid phone number");
+                    return;
+                }
                 if (TextUtils.isEmpty(addressInput.getText().toString())) {
                     addressInput.setError("Enter a valid address");
                     return;
@@ -47,9 +66,8 @@ public class searchActivity extends AppCompatActivity {
                     companyInput.setError("Enter a valid company name");
                     return;
                 }
-                if (TextUtils.isEmpty(phoneInput.getText().toString())
-                        ||!isNumeric(phoneInput.getText().toString())) {
-                    phoneInput.setError("Enter a valid phone number");
+                if (TextUtils.isEmpty(emailInput.getText().toString())) {
+                    emailInput.setError("Enter a valid email");
                     return;
                 }
 
