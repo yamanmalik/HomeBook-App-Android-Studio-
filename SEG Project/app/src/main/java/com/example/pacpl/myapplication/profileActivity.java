@@ -39,12 +39,12 @@ public class profileActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent startintent = new Intent(getApplicationContext(), welcomeuser.class);
+                Intent startintent = new Intent(getApplicationContext(), search.class);
                 startActivity(startintent);
                 firstName = firstNameInput.getText().toString();
                 role = roleInput.getText().toString();
 
-                Intent intent = new Intent(profileActivity.this, welcomeuser.class);
+                Intent intent = new Intent(profileActivity.this, search.class);
 
                 intent.putExtra("jim", role);
                 intent.putExtra("jimmy", firstName);

@@ -26,7 +26,10 @@
         <activity
             android:name=".WelcomeSP"
             android:label="@string/title_activity_welcome_sp" />
-        <activity android:name=".welcomeuser"></activity>
+        <activity android:name=".welcomeuser" />
+        <activity
+            android:name=".search"
+            android:label="@string/title_activity_search"></activity>
     </application>
 
 </manifest>
