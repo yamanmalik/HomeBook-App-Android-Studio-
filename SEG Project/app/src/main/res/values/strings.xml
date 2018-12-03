@@ -42,16 +42,16 @@
 
 
     <string-array name="DaysOfWeek">
-        <item>Monday</item>
-        <item>Tuesday</item>
-        <item>Wednesday</item>
-        <item>Thursday</item>
-        <item>Friday</item>
-        <item>Saturday</item>
-        <item>Sunday</item>
+        <item>5.0</item>
+        <item>4.0</item>
+        <item>3.0</item>
+        <item>2.0</item>
+        <item>1.0</item>
+
 
     </string-array>
     <string name="title_activity_search">search</string>
+    <string name="title_activity_book">book</string>
 
 
 </resources>

@@ -2,7 +2,6 @@ package com.example.pacpl.myapplication;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class search extends Activity {
+public class book extends Activity {
     Button listOfServices;
     TextView addedServices;
     String[] listOfItems;
@@ -39,7 +38,7 @@ public class search extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_book);
 
         listOfServices3 = (Button) findViewById(R.id.listofavail2);
         addedServices3 = (TextView) findViewById(R.id.availdisplay2);
@@ -49,8 +48,8 @@ public class search extends Activity {
         listOfServices3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(search.this);
-                builder.setTitle("Select Rating");
+                AlertDialog.Builder builder = new AlertDialog.Builder(book.this);
+                builder.setTitle("Select Day of Availability");
                 builder.setMultiChoiceItems(listOfItems3, checkedItems3, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -105,45 +104,6 @@ public class search extends Activity {
 
 
 
-        Button searchbutton1 = (Button) findViewById(R.id.searchbutton); //search
-        searchbutton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-                Intent startintent = new Intent(getApplicationContext(),book.class);
-                startActivity(startintent);
-
-
-                Intent intent = new Intent(search.this, book.class);
-
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -158,8 +118,8 @@ public class search extends Activity {
         listOfServices2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(search.this);
-                builder.setTitle("Select Preferred Time Slot");
+                AlertDialog.Builder builder = new AlertDialog.Builder(book.this);
+                builder.setTitle("Select Availability");
                 builder.setMultiChoiceItems(listOfItems2, checkedItems2, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int position, boolean isChecked) {
@@ -224,7 +184,7 @@ public class search extends Activity {
 //        listOfServices1.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
-//                AlertDialog.Builder builder = new AlertDialog.Builder(search.this);
+//                AlertDialog.Builder builder = new AlertDialog.Builder(book.this);
 //                builder.setTitle("Services Available To Be Removed");
 //                builder.setMultiChoiceItems(listOfItems1, checkedItems1, new DialogInterface.OnMultiChoiceClickListener() {
 //                    @Override
@@ -277,6 +237,9 @@ public class search extends Activity {
 //                mDialog.show();
 //            }
 //        });
+//
+//
+//
 
 
 
@@ -304,73 +267,167 @@ public class search extends Activity {
 
 
 
-
-
-
-        listOfServices = (Button) findViewById(R.id.listofservices);
-        addedServices = (TextView) findViewById(R.id.addedservicesdisplayed);
-        listOfItems = getResources().getStringArray(R.array.Services_Provided);
-        checkedItems = new boolean[listOfItems.length];
-
-        listOfServices.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(search.this);
-                builder.setTitle("Select The Services You Prefer");
-                builder.setMultiChoiceItems(listOfItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
-                        if(isChecked){
-                            if(!selectedItems.contains(position)){
-                                selectedItems.add(position);
-                            }
-                        }
-                        else if(selectedItems.contains(position)){
-                            selectedItems.remove((Integer)position);
-                        }
-                    }
-                });
-                builder.setCancelable(false);
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        String item = "";
-                        for(int i = 0; i<selectedItems.size();i++){
-                            item = item + listOfItems[selectedItems.get(i)];
-                            if(i != selectedItems.size() -1){
-                                item = item + ", ";
-
-                            }
-                        }
-                        addedServices.setText(item);
-                    }
-                });
-
-                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.dismiss();
-                    }
-                });
-
-                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        for(int i = 0; i<checkedItems.length;i++){
-                            checkedItems[i] = false;
-                            selectedItems.clear();
-                            addedServices.setText("");
-                        }
-                    }
-                });
-
-                AlertDialog mDialog = builder.create();
-                mDialog.show();
-            }
-        });
-
+//        listOfServices = (Button) findViewById(R.id.listofservices);
+//        addedServices = (TextView) findViewById(R.id.addedservicesdisplayed);
+//        listOfItems = getResources().getStringArray(R.array.Services_Provided);
+//        checkedItems = new boolean[listOfItems.length];
+//
+//        listOfServices.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(book.this);
+//                builder.setTitle("Services Available To Be Added");
+//                builder.setMultiChoiceItems(listOfItems, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+//                        if(isChecked){
+//                            if(!selectedItems.contains(position)){
+//                                selectedItems.add(position);
+//                            }
+//                        }
+//                        else if(selectedItems.contains(position)){
+//                            selectedItems.remove((Integer)position);
+//                        }
+//                    }
+//                });
+//                builder.setCancelable(false);
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String item = "";
+//                        for(int i = 0; i<selectedItems.size();i++){
+//                            item = item + listOfItems[selectedItems.get(i)];
+//                            if(i != selectedItems.size() -1){
+//                                item = item + ", ";
+//
+//                            }
+//                        }
+//                        addedServices.setText(item);
+//                    }
+//                });
+//
+//                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//
+//                builder.setNeutralButton("Clear All", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        for(int i = 0; i<checkedItems.length;i++){
+//                            checkedItems[i] = false;
+//                            selectedItems.clear();
+//                            addedServices.setText("");
+//                        }
+//                    }
+//                });
+//
+//                AlertDialog mDialog = builder.create();
+//                mDialog.show();
+//            }
+//        });
+//
 
     }
 
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//package com.example.pacpl.myapplication;
+//
+//import android.os.Bundle;
+//import android.app.Activity;
+//import android.app.AlertDialog;
+//import android.content.DialogInterface;
+//import android.view.View;
+//import android.widget.Button;
+//import android.widget.TextView;
+//
+//
+//import java.util.ArrayList;
+//
+//public class WelcomeSP extends Activity {
+//
+//
+//    Button listOfServices;
+//    TextView addedServices;
+//    String[] listOfItems;
+//    boolean[] checkedItems;
+//    ArrayList<Integer> selectedItems = new ArrayList<>();
+//
+//    Button listOfServices1;
+//    TextView addedServices1;
+//    String[] listOfItems1;
+//    boolean[] checkedItems1;
+//    ArrayList<Integer> selectedItems1 = new ArrayList<>();
+//
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_serviceproviderwelcome);
+//
+//
+//        listOfServices1 = (Button) findViewById(R.id.listofservices2);
+//        addedServices1 = (TextView) findViewById(R.id.removedservicesdisplayed);
+//        listOfItems1 = getResources().getStringArray(R.array.Services_Provided);
+//        checkedItems1 = new boolean[listOfItems1.length];
+//
+//        listOfServices1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                AlertDialog.Builder builder = new AlertDialog.Builder(WelcomeSP.this);
+//                builder.setTitle("Services Available To Be Removed");
+//                builder.setMultiChoiceItems(listOfItems1, checkedItems1, new DialogInterface.OnMultiChoiceClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int position, boolean isChecked) {
+//                        if(isChecked){
+//                            if(!selectedItems1.contains(position)){
+//                                selectedItems1.add(position);
+//                            }
+//                        }
+//                        else if(selectedItems1.contains(position)){
+//                            selectedItems1.remove((Integer)position);
+//                        }
+//                    }
+//                });
+//                builder.setCancelable(false);
+//                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        String item = "";
+//                        for(int i = 0; i<selectedItems1.size();i++){
+//                            item = item + listOfItems1[selectedItems1.get(i)];
+//                            if(i != selectedItems1.size() -1){
+//                                item = item + ", ";
+//
+//                            }
+//                        }
+//                        addedServices1.setText(item);
+//                    }
+//                });
+//
+//                builder.setNegativeButton("Dismiss", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.dismiss();
+//                    }
+//                });
+//    }
+//
+//}

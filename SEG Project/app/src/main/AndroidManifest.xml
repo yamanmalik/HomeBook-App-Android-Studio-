@@ -29,7 +29,10 @@
         <activity android:name=".welcomeuser" />
         <activity
             android:name=".search"
-            android:label="@string/title_activity_search"></activity>
+            android:label="@string/title_activity_search" />
+        <activity
+            android:name=".book"
+            android:label="@string/title_activity_book"></activity>
     </application>
 
 </manifest>
