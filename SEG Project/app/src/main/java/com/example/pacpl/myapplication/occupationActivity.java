@@ -4,6 +4,7 @@ package com.example.pacpl.myapplication;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,7 +20,7 @@ public class occupationActivity extends AppCompatActivity {
     EditText usernameInput;
     EditText passwordInput;
     EditText emailInput;
-    EditText phonenumberInput;
+    EditText phoneInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +28,17 @@ public class occupationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_occupation);
 
         usernameInput = (EditText) findViewById(R.id.firstname);
+
+
+
         passwordInput = (EditText) findViewById(R.id.lastname);
-        phonenumberInput = (EditText) findViewById(R.id.phonenumber);
+        phoneInput = (EditText) findViewById(R.id.phonenumber);
         emailInput = (EditText) findViewById(R.id.email);
 
         username =usernameInput.getText().toString();
         password = passwordInput.getText().toString();
         email =emailInput.getText().toString();
-        phonenumber = phonenumberInput.getText().toString();
+        phonenumber = phoneInput.getText().toString();
 
         //roleInput = (EditText) findViewById(R.id.confirm2);
 
@@ -47,6 +51,24 @@ public class occupationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                if (TextUtils.isEmpty(usernameInput.getText().toString())) {
+                    usernameInput.setError("Enter a valid username");
+                    return;
+                }
+                if (TextUtils.isEmpty(passwordInput.getText().toString())) {
+                    passwordInput.setError("Enter a valid password");
+                    return;
+                }
+                if (TextUtils.isEmpty(phoneInput.getText().toString())
+                        ||!isNumeric(phoneInput.getText().toString())
+                        ||phoneInput.getText().toString().length()!=10) {
+                    phoneInput.setError("Enter a valid phone number");
+                    return;
+                }
+                if (TextUtils.isEmpty(emailInput.getText().toString())) {
+                    emailInput.setError("Enter a valid email");
+                    return;
+                }
 
                 Intent startintent = new Intent(getApplicationContext(), welcome.class);
                 startActivity(startintent);
@@ -69,6 +91,15 @@ public class occupationActivity extends AppCompatActivity {
 
 
     }
+    public boolean isNumeric(String strNum) {
+        try {
+            double d = Double.parseDouble(strNum);
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+        return true;
+    }
+
 }
 
 

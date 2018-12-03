@@ -44,11 +44,13 @@ public class searchActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (TextUtils.isEmpty(firstNameInput.getText().toString())) {
+                if (TextUtils.isEmpty(firstNameInput.getText().toString())
+                        ||!isAlpha(firstNameInput.getText().toString())) {
                     firstNameInput.setError("Enter a valid name");
                     return;
                 }
-                if (TextUtils.isEmpty(lastNameInput.getText().toString())) {
+                if (TextUtils.isEmpty(lastNameInput.getText().toString())
+                        ||!isAlpha(lastNameInput.getText().toString())) {
                     lastNameInput.setError("Enter a valid name");
                     return;
                 }
@@ -88,6 +90,16 @@ public class searchActivity extends AppCompatActivity {
                     double d = Double.parseDouble(strNum);
                 } catch (NumberFormatException | NullPointerException nfe) {
                     return false;
+                }
+                return true;
+            }
+            public boolean isAlpha(String name) {
+                char[] chars = name.toCharArray();
+
+                for (char c : chars) {
+                    if(!Character.isLetter(c)) {
+                        return false;
+                    }
                 }
                 return true;
             }

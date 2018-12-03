@@ -7,10 +7,13 @@ import android.app.Activity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.RatingBar;
 
 import java.util.ArrayList;
 
 public class book extends Activity {
+
+
     Button listOfServices;
     TextView addedServices;
     String[] listOfItems;
@@ -40,9 +43,22 @@ public class book extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book);
 
+        final RatingBar ratingRatingBar = (RatingBar) findViewById(R.id.rating_rating_bar);
+        Button submitButton = (Button) findViewById(R.id.submit_button);
+        final TextView ratingDisplayTextView = (TextView) findViewById(R.id.rating_display_text_View);
+
+        submitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ratingDisplayTextView.setText("Your rating is: " + ratingRatingBar.getRating());
+            }
+        });
+
+
+
         listOfServices3 = (Button) findViewById(R.id.listofavail2);
         addedServices3 = (TextView) findViewById(R.id.availdisplay2);
-        listOfItems3 = getResources().getStringArray(R.array.DaysOfWeek);
+        listOfItems3 = getResources().getStringArray(R.array.Days);
         checkedItems3 = new boolean[listOfItems3.length];
 
         listOfServices3.setOnClickListener(new View.OnClickListener() {

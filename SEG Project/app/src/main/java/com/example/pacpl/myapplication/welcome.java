@@ -33,6 +33,8 @@ public class welcome extends AppCompatActivity {
             TextView firstName1;
             TextView firstName2;
 
+
+
             final String nameofservice;
             final String nameofservice2;
             final String nameofservice3;
@@ -40,6 +42,8 @@ public class welcome extends AppCompatActivity {
 
             EditText servicename;
             EditText ratehourly;
+
+
 
             TextView role1;
             TextView role2;
@@ -55,6 +59,20 @@ public class welcome extends AppCompatActivity {
             Intent intent5 = getIntent();
             Intent intent6 = getIntent();
 
+
+
+
+
+
+
+//            nameOfService = (EditText) findViewById(R.id.nameofservice);
+//            display1 = (TextView)findViewById(R.id.servicedisplay);
+//            //String str1 = intent2.getStringExtra("jimmy");
+//            display1.setText(nameOfService);
+
+
+
+
             firstName = (TextView) findViewById(R.id.firstname1);
             String str = intent.getStringExtra("jimmy");//FOR ADMIN
             firstName.setText(str);
@@ -67,17 +85,17 @@ public class welcome extends AppCompatActivity {
             String str2 = intent3.getStringExtra("jimmy");
             firstName2.setText(str2);
 
-            role1 = (TextView) findViewById(R.id.role1);
-            String str3 = intent4.getStringExtra("jim");
-            role1.setText(str3);
-
-            role2 = (TextView) findViewById(R.id.role1);
-            String str4 = intent5.getStringExtra("jim");
-            role2.setText(str4);
-
-            role3 = (TextView) findViewById(R.id.role1);
-            String str5 = intent6.getStringExtra("jim");
-            role3.setText(str5);
+//            role1 = (TextView) findViewById(R.id.role1);
+//            String str3 = intent4.getStringExtra("jim");
+//            role1.setText(str3);
+//
+//            role2 = (TextView) findViewById(R.id.role1);
+//            String str4 = intent5.getStringExtra("jim");
+//            role2.setText(str4);
+//
+//            role3 = (TextView) findViewById(R.id.role1);
+//            String str5 = intent6.getStringExtra("jim");
+//            role3.setText(str5);
 
             //This section of code is for adding new services so it retrieves information
             //from the text inputs and then using the addservice button
@@ -93,8 +111,15 @@ public class welcome extends AppCompatActivity {
             addservice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Service service = new Service(nameofservice, hourlyrate);
-                    list.add(service);
+
+                    EditText nameOfService;
+                    TextView display1;
+
+                    nameOfService = (EditText) findViewById(R.id.nameofservice);
+                    display1 = (TextView) findViewById(R.id.servicedisplay);
+                    display1.setText(nameOfService.getText());
+
+
                 }
             });
 
@@ -103,15 +128,18 @@ public class welcome extends AppCompatActivity {
             nameofservice2 = servicename.getText().toString();
 
             //This section when clicked removes the service from the list
-            final Button removeservice = (Button) findViewById(R.id.removeservicebtn);
+            Button removeservice = (Button) findViewById(R.id.removeservicebtn);
             removeservice.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    for (int i = 0; i <= list.size(); i++) {
-                        if (list.get(i).getNameofService().equals(nameofservice2)) {
-                            list.remove(i);
-                        }
-                    }
+
+                    EditText nameOfService2;
+                    TextView display2;
+
+                    nameOfService2 = (EditText) findViewById(R.id.servicenameremoval);
+                    display2 = (TextView) findViewById(R.id.servicedisplay2);
+                    display2.setText(nameOfService2.getText());
+
 
                 }
             });
@@ -143,6 +171,17 @@ public class welcome extends AppCompatActivity {
             System.out.println("Enter integer");
         }
     }
+
+//    public void buttonOnClick(View addservicebtn){
+//        EditText nameOfService;
+//        TextView display1;
+//
+//        nameOfService = (EditText) findViewById(R.id.nameofservice);
+//        display1 = (TextView) findViewById(R.id.servicedisplay);
+//        display1.setText(nameOfService.getText());
+//
+//    }
+
 }
 
 //        super.onCreate(savedInstanceState);
