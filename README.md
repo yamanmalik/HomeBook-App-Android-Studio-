@@ -12,5 +12,5 @@ Eric Dam (300012511, edam3268@gmail.com)
 
 Build Status
 [![Build
-Status](https://circleci.com/gh/yamanmalik/SEG2105-Project.png?branch=master)](https://circle
-ci.com/gh/yamanmalik/SEG2105-Project)
+Status](https://circleci.com/gh/SEG2105F18/ProductCatalog.png?branch=master)](https://circle
+ci.com/gh/SEG2105F18/ProductCatalog)
