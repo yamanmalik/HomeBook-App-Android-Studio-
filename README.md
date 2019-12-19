@@ -1,12 +1,14 @@
-# SEG2105-Project
-Repository containing the required files for the SEG2105 final group project.
-
+# HomeBook App
+This repository contains the files for one of my projects in one of my courses (Intro. to Soft. Eng.)
+The purpose of the assignment was to introduce us to the world of Android development, as well as how to
+use Android Studio/ it's proper syntax. We learned how to create buttons and link them to new activities. 
+App layout can be seen  by opening the folder in Android Studio. 
 
 Contributors:
-Yaman Malik (300041804, ymali009@uottawa.ca)
-Shumael Syed1 (300024162, ssyed076@uottawa.ca)
-Arjuunan Arulnamby (300043459, aarul064@uottawa.ca)
-Eric Dam (300012511, edam3268@gmail.com)
+Yaman Malik 
+Shumael Syed
+Arjuunan Arulnamby 
+Eric Dam 
 
 
 
